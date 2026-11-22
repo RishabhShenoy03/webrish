@@ -1,5 +1,8 @@
-const year=document.querySelector('[data-year]');if(year)year.textContent=new Date().getFullYear();
-const theme=document.createElement('link');theme.rel='stylesheet';theme.href='theme.css';document.head.appendChild(theme);
-document.querySelectorAll('a').forEach(link=>{if(link.target==='_blank')link.setAttribute('aria-label',`${link.textContent.trim()} (opens in a new tab)`)});
-const homeProjects=document.querySelector('a[href="projects.html#caresync"]')?.parentElement;
-if(homeProjects){const event=document.createElement('a');event.className='project-card';event.href='projects.html#eventlogger';event.innerHTML='<span class="project-number">01 · Computer vision</span><div><h3>EventLogger</h3><p>A Raspberry Pi camera system that tracks presence and sends timely Telegram updates.</p><span class="tag">Read case study ↗</span></div>';homeProjects.prepend(event);homeProjects.querySelector('a[href="projects.html#caresync"] .project-number').textContent='02 · Hardware + ML';homeProjects.querySelector('a[href="projects.html#alex"] .project-number').textContent='03 · Robotics'}
+const year=document.querySelector('[data-year]');
+if(year)year.textContent=new Date().getFullYear();
+if(document.querySelector('link[href="styles.css"]')){
+  const theme=document.createElement('link');
+  theme.rel='stylesheet';
+  theme.href='theme.css';
+  document.head.appendChild(theme);
+}
