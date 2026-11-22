@@ -1,0 +1,9 @@
+body{background:#111a27;color:#f2efe6}
+body:before{display:none}
+header{position:relative}
+header:before{color:#d6b5ba}
+.trip-home{display:flex;align-items:center;gap:10px;width:max-content;margin-bottom:34px;font:600 .95rem 'Space Grotesk',sans-serif;text-decoration:none;color:#f2efe6}
+.trip-home img{width:36px;height:36px;object-fit:cover;object-position:center 31%;border-radius:50%;transform:none}
+main>section:first-child{background:#283546;border-color:#687486}
+main section:not(:first-child),footer{border-color:rgba(219,220,207,.16)}
+footer a{color:#d6b5ba}
