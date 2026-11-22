@@ -1,0 +1,56 @@
+/* Night-sky portfolio system: ink-blue surfaces, violet light, clear content hierarchy. */
+:root{--ink:#eef0ff;--paper:#090d20;--muted:#aeb7d5;--lime:#ac9eff;--orange:#a9b8ff;--line:rgba(195,204,255,.19)}
+html{scroll-padding-top:24px}
+body{background:radial-gradient(ellipse 85% 620px at 85% 0%,rgba(90,53,175,.35),transparent 70%),radial-gradient(ellipse 55% 520px at 5% 35%,rgba(24,65,130,.22),transparent 75%),#090d20;color:#eef0ff}
+.topbar{border-color:rgba(195,204,255,.19)}
+.wordmark span,.eyebrow,nav a:hover,nav a.active{color:#b7a5ff}
+.hero{position:relative}
+.hero h1,.projects-hero h1{background:linear-gradient(115deg,#fff 15%,#c5c5ff 60%,#9b88ed);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero-aside{border-color:#a794f7;color:#cbd2e9}
+.hero-copy{color:#d4d9ef}
+.strip{background:linear-gradient(90deg,#172c62,#50378b,#172c62);color:#e8e7ff;border-color:rgba(195,204,255,.3)}
+.section,.case-study{border-color:rgba(195,204,255,.19)}
+.section-head p,.fact span:last-child,footer{color:#adb6d4}
+.project-card{background:linear-gradient(145deg,#182348,#1a1c3c);border-color:rgba(195,204,255,.25);border-radius:18px;box-shadow:0 16px 50px rgba(0,0,0,.12)}
+.project-card:nth-child(2){background:linear-gradient(145deg,#35275f,#1b1c3d)}
+.project-card:nth-child(3){background:linear-gradient(145deg,#16314f,#1a1a3a)}
+.project-card p{color:#c8d0eb}
+.tag{border-color:rgba(196,204,255,.36);color:#d9ddf7}
+.button{background:linear-gradient(110deg,#a994ff,#8db5ff);color:#10162c;border:0;font-weight:700}
+.button:hover{background:linear-gradient(110deg,#c0b0ff,#a9c8ff);color:#10162c}
+.feature{background:linear-gradient(135deg,#171b37,#282049);border:1px solid rgba(195,204,255,.2);border-radius:20px;overflow:hidden}
+.feature-copy p{color:#c2c9e4}
+.feature-copy .button{background:#b5a4ff;color:#10162c}
+.travel-card{border-radius:18px;border:1px solid rgba(195,204,255,.22)}
+.travel-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,8,24,.8),transparent 55%);pointer-events:none}
+.travel-label{z-index:1}
+.fact,.facts{border-color:rgba(195,204,255,.19)}
+.skip-link{position:absolute;top:-80px;left:16px;padding:12px;background:#b5a4ff;color:#11162d;z-index:30}
+.skip-link:focus{top:8px}
+a:focus-visible{outline:2px solid #d5c9ff;outline-offset:4px}
+.case-study{padding:92px 0;border-bottom:1px solid rgba(195,204,255,.19);scroll-margin-top:16px}
+.case-heading{max-width:850px;margin-bottom:36px}
+.case-heading h2{font-size:clamp(3.4rem,9vw,7rem);margin:12px 0 24px}
+.case-lead{font-size:clamp(1.25rem,2.2vw,1.75rem);line-height:1.45;color:#d8ddf4;max-width:750px}
+.case-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.13fr);gap:clamp(28px,5vw,80px);align-items:start}
+.case-art{width:100%;min-height:440px;border-radius:18px;border:1px solid rgba(195,204,255,.24);position:sticky;top:24px}
+.case-photo{height:510px;object-fit:cover}
+.case-detail h3{font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.08;letter-spacing:-.05em;margin:0 0 26px}
+.case-detail p{color:#bdc7e2;font-size:1.04rem;line-height:1.75}
+.case-takeaway{border-left:2px solid #a994ff;padding:5px 0 5px 18px;margin:34px 0}
+.case-takeaway span{display:block;color:#b7a5ff;font:500 .72rem 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.event-art{overflow:hidden;padding:26px;background:radial-gradient(circle at 60% 35%,#6540a1 0%,#243767 45%,#12172f 85%);display:flex;flex-direction:column;justify-content:space-between}
+.event-art>span{font:500 .75rem 'DM Mono',monospace;letter-spacing:.12em}
+.event-art strong{font-size:clamp(2.1rem,4.4vw,4.2rem);line-height:1.03;letter-spacing:-.07em;z-index:1}
+.face-frame{position:absolute;right:13%;top:20%;width:42%;height:39%;border:2px solid #bfafff;border-radius:28px;box-shadow:0 0 40px rgba(165,144,255,.25)}
+.face-frame span{position:absolute;left:0;bottom:-27px;white-space:nowrap;background:#b7a5ff;color:#10162c;padding:5px 8px;font:500 .6rem 'DM Mono',monospace}
+.closing{padding:100px 0;text-align:center}
+.closing p:not(.eyebrow){color:#bcc5df;max-width:500px;margin:26px auto}
+.closing h2{font-size:clamp(3rem,7vw,6rem)}
+@media(max-width:760px){.case-study{padding:64px 0}.case-body{grid-template-columns:1fr}.case-art{position:relative;top:auto;min-height:330px}.case-photo{height:340px}.closing{padding:70px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-card,.button,.travel-card img{transition:none}}
+/* The travel journals share the same palette without changing their photo-led structure. */
+body>header,body>main,body>footer{color:#eef0ff}
+body>main>section:first-child{background:linear-gradient(125deg,#263466,#3d2b70);border-color:rgba(195,204,255,.3)}
+body>main section:not(:first-child),body>footer{border-color:rgba(195,204,255,.2)}
+body>footer a{color:#b7a5ff}
