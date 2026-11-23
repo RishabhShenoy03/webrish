@@ -143,9 +143,9 @@ a:focus-visible{outline:2px solid #d6cfff;outline-offset:5px}
 .logo .logo-text,.logo-text>span{color:var(--text)}
 .logo-text>span{color:var(--accent)}
 .header-contact{border:1px solid #828ca9;border-radius:6px}
-.header-socials,.hero-socials{display:flex;align-items:center;gap:16px;font:500 .72rem 'DM Mono',monospace}
+.header-socials,.hero-socials{display:flex;align-items:center;gap:16px;font:500 .85rem var(--sans);line-height:1}
 .header-socials{height:84px;margin-left:auto;padding-right:12px}
-.header-socials a{height:84px;display:inline-flex;align-items:center;line-height:84px;padding:0;border:0}
+.header-socials a{height:84px;display:inline-flex;align-items:center;line-height:84px;padding:0;border:0;transform:translateY(1px)}
 .header-socials a{color:#d8def0;border:0;padding:0}
 .hero-socials a{color:#d8def0;border-bottom:1px solid #8792af;padding-bottom:5px}
 .kicker{color:var(--accent)}
