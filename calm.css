@@ -197,10 +197,12 @@ h1 em,h2 em{color:#b9aaff}
 .trip-content>section:first-child{background:#1b2735}
 .page-leaving{opacity:.5;transform:translateY(4px);transition:opacity .18s,transform .18s}
 .navigation-starting{cursor:progress}
+body{animation:page-enter .28s ease-out both}
 ::view-transition-old(root){animation:page-out .28s ease-out both}
 ::view-transition-new(root){animation:page-in .34s ease-out both}
 @keyframes page-out{to{opacity:.2;transform:translateY(8px)}}
 @keyframes page-in{from{opacity:.25;transform:translateY(10px)}}
+@keyframes page-enter{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:800px){.shell{width:calc(100% - 64px)}.home-projects{grid-template-columns:1fr}.header-socials{gap:10px}}
 @media(max-width:800px){.home-bottom h2{white-space:normal}}
 @media(max-width:650px){.shell{width:calc(100% - 36px)}.header-socials{display:none}.hero-socials{width:100%;order:2}.hero-actions{gap:18px}.hero-portrait:before{font-size:.62rem;padding:0 14px}.travel-preview img{height:230px}.work-image{height:220px}.home-project-image{height:auto;aspect-ratio:1.55;width:calc(100% - 40px);margin:0 20px}.home-project-info{height:145px;padding:20px}.home-stack{font-size:.58rem}}
