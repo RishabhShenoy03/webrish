@@ -138,6 +138,7 @@ a:hover{color:#d0c7ff}
 a:focus-visible{outline:2px solid #d6cfff;outline-offset:5px}
 .skip{background:#d6cfff;color:#080d1c}
 .site-header{background:transparent;border-bottom:1px solid rgba(195,204,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.site-header.scrolled{background:rgba(8,13,32,.96);border-bottom-color:rgba(195,204,255,.18);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
 .logo .logo-text,.logo-text>span{color:var(--text)}
 .logo-text>span{color:var(--accent)}
 .header-contact{border:1px solid #828ca9;border-radius:6px}

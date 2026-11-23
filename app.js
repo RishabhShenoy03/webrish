@@ -16,6 +16,18 @@ function initPage(){
     headerAvatarObserver=new IntersectionObserver(([entry])=>headerAvatar.classList.toggle('visible',!entry.isIntersecting),{threshold:.12});
     headerAvatarObserver.observe(portrait);
   }
+
+  const header=document.querySelector('.site-header');
+  if(header){
+    const updateHeader=()=>{
+      const portraitBottom=portrait?.getBoundingClientRect().bottom ?? 0;
+      header.classList.toggle('scrolled',window.scrollY>24 && (!portrait || portraitBottom<84));
+    };
+    window.removeEventListener('scroll',window.__rishabhHeaderScroll);
+    window.__rishabhHeaderScroll=updateHeader;
+    window.addEventListener('scroll',updateHeader,{passive:true});
+    updateHeader();
+  }
 }
 
 initPage();
