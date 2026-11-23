@@ -1,0 +1,5 @@
+Redesign Rishabh Shenoy’s portfolio homepage in a dark Scandinavian style: calm, welcoming, and quietly confident. Create one cohesive scrolling journey that introduces him, showcases his engineering work, shares his travel journals, and ends with an invitation to connect. Use warm charcoal, muted forest green, soft cream text, and restrained amber accents, preserving his real photographs and project details.
+
+Make the experience feel personal and considered. Pair expressive, readable headings with clear body typography, generous spacing, and gentle interactions. Guide visitors from curiosity about Rishabh to an understanding of his work, then toward the person behind it. Extend the same colors, typography, navigation, and spacing to the projects page, travel index, and individual journals.
+
+Take inspiration from a quiet Nordic reading room in the evening, tactile natural materials, and thoughtfully crafted everyday objects. Express those references through proportion, subtle tonal depth, and uncluttered composition. Keep the design approachable and consistent across desktop and mobile, with visible navigation, accessible contrast, and reduced-motion support.
