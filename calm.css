@@ -15,13 +15,13 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:6px;border-radius
 .logo-text>span{color:var(--accent)}
 .header-avatar{display:inline-block;width:0;height:32px;opacity:0;overflow:hidden;border-radius:50%;transition:width .3s,opacity .3s}
 .header-avatar.visible{width:32px;opacity:1}
-.header-avatar.visible{margin-left:6px}
+.header-avatar.visible{margin-left:10px}
 .header-avatar img{display:block;width:100%;height:100%;object-fit:cover}
 nav{gap:30px}
 nav a,.header-contact,.text-link,.socials,footer{font-family:var(--sans);font-size:.85rem;letter-spacing:0}
-nav a{position:relative;color:var(--muted);padding:10px 0}
+nav a{position:relative;color:var(--muted);display:inline-flex;align-items:center;height:84px;padding:0}
 nav a[aria-current]{color:var(--text)}
-nav a[aria-current]:after{content:'';position:absolute;width:4px;height:4px;border-radius:50%;background:var(--accent);bottom:0;left:calc(50% - 2px)}
+nav a[aria-current]:after{content:'';position:absolute;width:4px;height:4px;border-radius:50%;background:var(--accent);bottom:22px;left:calc(50% - 2px)}
 .header-contact{border:1px solid #66705f;border-radius:999px;padding:12px 20px;transition:background .2s}
 .header-contact:hover{background:var(--forest);color:var(--text)}
 .kicker{font:500 .68rem 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);line-height:1.6}
@@ -148,7 +148,7 @@ a:focus-visible{outline:2px solid #d6cfff;outline-offset:5px}
 .header-socials a,.hero-socials a{color:#d8def0;border-bottom:1px solid #8792af;padding-bottom:5px}
 .kicker{color:var(--accent)}
 .hero-heading h1,.projects-intro h1,.section-title h2,.home-bottom h2,.contact-section h2,.trip-intro h1{font-family:var(--serif);letter-spacing:-.055em}
-.home-bottom h2{font-size:clamp(2.8rem,4.1vw,4.2rem);line-height:.95}
+.home-bottom h2{font-size:clamp(2.8rem,4.1vw,4.2rem);line-height:.88}
 #travel-title>span,#travel-title>em{display:block;white-space:nowrap}
 h1 em,h2 em{color:#b9aaff}
 .location-note,.intro-copy,.hero-note,.home-project p,.work-content p,.travel-entry p,.trip-content p,.trip-content li,footer{color:#bcc6dd}
