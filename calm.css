@@ -15,6 +15,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:6px;border-radius
 .logo-text>span{color:var(--accent)}
 .header-avatar{display:inline-block;width:0;height:32px;opacity:0;overflow:hidden;border-radius:50%;transition:width .3s,opacity .3s}
 .header-avatar.visible{width:32px;opacity:1}
+.header-avatar.visible{margin-left:6px}
 .header-avatar img{display:block;width:100%;height:100%;object-fit:cover}
 nav{gap:30px}
 nav a,.header-contact,.text-link,.socials,footer{font-family:var(--sans);font-size:.85rem;letter-spacing:0}
@@ -147,6 +148,8 @@ a:focus-visible{outline:2px solid #d6cfff;outline-offset:5px}
 .header-socials a,.hero-socials a{color:#d8def0;border-bottom:1px solid #8792af;padding-bottom:5px}
 .kicker{color:var(--accent)}
 .hero-heading h1,.projects-intro h1,.section-title h2,.home-bottom h2,.contact-section h2,.trip-intro h1{font-family:var(--serif);letter-spacing:-.055em}
+.home-bottom h2{font-size:clamp(2.8rem,4.1vw,4.2rem);line-height:.95}
+#travel-title>span,#travel-title>em{display:block;white-space:nowrap}
 h1 em,h2 em{color:#b9aaff}
 .location-note,.intro-copy,.hero-note,.home-project p,.work-content p,.travel-entry p,.trip-content p,.trip-content li,footer{color:#bcc6dd}
 .status-dot{background:#9f93cf;box-shadow:0 0 0 4px #9f93cf1a}
