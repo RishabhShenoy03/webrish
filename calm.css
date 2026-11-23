@@ -10,18 +10,18 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:6px;border-radius
 .shell{width:min(1160px,calc(100% - 80px))}
 .skip{background:var(--accent);color:var(--bg)}
 .site-header{position:sticky;top:0;z-index:20;height:90px;gap:56px;background:rgba(28,33,30,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
-.logo{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;font-size:1.05rem;font-weight:600;letter-spacing:-.035em}
+.logo{display:inline-flex;align-items:center;align-self:stretch;height:84px;gap:10px;white-space:nowrap;font-size:1.05rem;font-weight:600;letter-spacing:-.035em}
 .logo .logo-text{color:var(--text)}
 .logo-text>span{color:var(--accent)}
 .header-avatar{display:inline-block;width:0;height:32px;opacity:0;overflow:hidden;border-radius:50%;transition:width .3s,opacity .3s}
 .header-avatar.visible{width:32px;opacity:1}
 .header-avatar.visible{margin-left:10px}
 .header-avatar img{display:block;width:100%;height:100%;object-fit:cover}
-nav{gap:30px}
+nav{height:84px;display:flex;align-items:center;gap:30px}
 nav a,.header-contact,.text-link,.socials,footer{font-family:var(--sans);font-size:.85rem;letter-spacing:0}
-nav a{position:relative;color:var(--muted);display:inline-flex;align-items:center;height:84px;padding:0}
+nav a{position:relative;color:var(--muted);display:inline-flex;align-items:center;height:84px;line-height:84px;padding:0}
 nav a[aria-current]{color:var(--text)}
-nav a[aria-current]:after{content:'';position:absolute;width:4px;height:4px;border-radius:50%;background:var(--accent);bottom:22px;left:calc(50% - 2px)}
+nav a[aria-current]:after{content:'';position:absolute;width:4px;height:4px;border-radius:50%;background:var(--accent);bottom:18px;left:calc(50% - 2px)}
 .header-contact{border:1px solid #66705f;border-radius:999px;padding:12px 20px;transition:background .2s}
 .header-contact:hover{background:var(--forest);color:var(--text)}
 .kicker{font:500 .68rem 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);line-height:1.6}
@@ -144,7 +144,8 @@ a:focus-visible{outline:2px solid #d6cfff;outline-offset:5px}
 .logo-text>span{color:var(--accent)}
 .header-contact{border:1px solid #828ca9;border-radius:6px}
 .header-socials,.hero-socials{display:flex;align-items:center;gap:16px;font:500 .72rem 'DM Mono',monospace}
-.header-socials{margin-left:auto;padding-right:12px}
+.header-socials{height:84px;margin-left:auto;padding-right:12px}
+.header-socials a{height:84px;display:inline-flex;align-items:center;line-height:84px;padding:0}
 .header-socials a,.hero-socials a{color:#d8def0;border-bottom:1px solid #8792af;padding-bottom:5px}
 .kicker{color:var(--accent)}
 .hero-heading h1,.projects-intro h1,.section-title h2,.home-bottom h2,.contact-section h2,.trip-intro h1{font-family:var(--serif);letter-spacing:-.055em}
