@@ -145,8 +145,9 @@ a:focus-visible{outline:2px solid #d6cfff;outline-offset:5px}
 .header-contact{border:1px solid #828ca9;border-radius:6px}
 .header-socials,.hero-socials{display:flex;align-items:center;gap:16px;font:500 .72rem 'DM Mono',monospace}
 .header-socials{height:84px;margin-left:auto;padding-right:12px}
-.header-socials a{height:84px;display:inline-flex;align-items:center;line-height:84px;padding:0}
-.header-socials a,.hero-socials a{color:#d8def0;border-bottom:1px solid #8792af;padding-bottom:5px}
+.header-socials a{height:84px;display:inline-flex;align-items:center;line-height:84px;padding:0;border:0}
+.header-socials a{color:#d8def0;border:0;padding:0}
+.hero-socials a{color:#d8def0;border-bottom:1px solid #8792af;padding-bottom:5px}
 .kicker{color:var(--accent)}
 .hero-heading h1,.projects-intro h1,.section-title h2,.home-bottom h2,.contact-section h2,.trip-intro h1{font-family:var(--serif);letter-spacing:-.055em}
 .home-bottom h2{font-size:clamp(2.8rem,4.1vw,4.2rem);line-height:.88}
