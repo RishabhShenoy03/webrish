@@ -196,6 +196,7 @@ h1 em,h2 em{color:#b9aaff}
 .travel-entry{background:#1b2735;border-radius:8px}
 .trip-content>section:first-child{background:#1b2735}
 .page-leaving{opacity:.5;transform:translateY(4px);transition:opacity .18s,transform .18s}
+.navigation-starting{cursor:progress}
 ::view-transition-old(root){animation:page-out .28s ease-out both}
 ::view-transition-new(root){animation:page-in .34s ease-out both}
 @keyframes page-out{to{opacity:.2;transform:translateY(8px)}}

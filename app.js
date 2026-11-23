@@ -32,33 +32,91 @@ function initPage(){
 
 initPage();
 
+const pageCache=new Map();
+
+function nextBodyFor(documentRef){
+  return documentRef.body;
+}
+
+async function getPageHtml(url){
+  if(pageCache.has(url.href)) return pageCache.get(url.href);
+  const response=await fetch(url.href,{cache:'force-cache',credentials:'same-origin'});
+  if(!response.ok) throw new Error(`Navigation failed: ${response.status}`);
+  const html=await response.text();
+  pageCache.set(url.href,html);
+  return html;
+}
+
+async function preloadNextPage(documentRef,url){
+  const assets=[...documentRef.querySelectorAll('link[rel="stylesheet"]')]
+    .map(element=>{
+      const value=element.href||element.src;
+      if(!value) return null;
+      return new URL(value,url.href);
+    })
+    .filter(value=>value&&value.origin===location.origin);
+
+  await Promise.all(assets.map(asset=>{
+    if(asset.pathname.endsWith('.css')){
+      return new Promise(resolve=>{
+        const link=document.createElement('link');
+        link.rel='stylesheet';
+        link.href=asset.href;
+        link.onload=resolve;
+        link.onerror=resolve;
+        if(![...document.styleSheets].some(sheet=>sheet.href===link.href)){
+          document.head.appendChild(link);
+        }else{
+          resolve();
+        }
+      });
+    }
+    return Promise.resolve();
+  }));
+}
+
 async function navigateWithoutReload(url, addHistory=true){
   if(location.protocol==='file:' || url.origin!==location.origin) return false;
-  if(document.startViewTransition && !prefersReducedMotion){
-    const response=await fetch(url.href,{headers:{'X-Requested-With':'RishabhSite'}});
-    if(!response.ok) return false;
-    const html=await response.text();
+  document.documentElement.classList.add('navigation-starting');
+
+  try{
+    const html=await getPageHtml(url);
     const nextDocument=new DOMParser().parseFromString(html,'text/html');
-    const nextBody=nextDocument.body;
-    await document.startViewTransition(()=>{
+    await preloadNextPage(nextDocument,url);
+
+    if(document.startViewTransition && !prefersReducedMotion){
+      await document.startViewTransition(()=>{
+        document.title=nextDocument.title;
+        document.documentElement.className=nextDocument.documentElement.className;
+        document.body.className=nextBodyFor(nextDocument).className;
+        document.body.innerHTML=nextBodyFor(nextDocument).innerHTML;
+        if(addHistory) history.pushState({},'',url.href);
+        initPage();
+        if(url.hash){
+          requestAnimationFrame(()=>document.querySelector(url.hash)?.scrollIntoView({block:'start'}));
+        }else{
+          window.scrollTo({top:0,behavior:'instant'});
+        }
+      }).finished;
+    }else{
+      document.body.classList.add('page-leaving');
+      await new Promise(resolve=>setTimeout(resolve,140));
       document.title=nextDocument.title;
       document.documentElement.className=nextDocument.documentElement.className;
-      document.body.className=nextBody.className;
-      document.body.innerHTML=nextBody.innerHTML;
+      document.body.className=nextBodyFor(nextDocument).className;
+      document.body.innerHTML=nextBodyFor(nextDocument).innerHTML;
       if(addHistory) history.pushState({},'',url.href);
       initPage();
-      if(url.hash){
-        requestAnimationFrame(()=>document.querySelector(url.hash)?.scrollIntoView({block:'start'}));
-      }else{
-        window.scrollTo({top:0,behavior:'instant'});
-      }
-    }).finished;
+      window.scrollTo({top:0,behavior:'instant'});
+      document.body.classList.remove('page-leaving');
+    }
+    document.documentElement.classList.remove('navigation-starting');
+    return true;
+  }catch(error){
+    document.documentElement.classList.remove('navigation-starting');
+    location.href=url.href;
     return true;
   }
-  document.body.classList.add('page-leaving');
-  await new Promise(resolve=>setTimeout(resolve,prefersReducedMotion?0:180));
-  location.href=url.href;
-  return true;
 }
 
 document.addEventListener('click',event=>{
@@ -71,6 +129,14 @@ document.addEventListener('click',event=>{
   event.preventDefault();
   navigateWithoutReload(url);
 });
+
+document.addEventListener('pointerover',event=>{
+  const link=event.target.closest('a[href]');
+  if(!link || link.target && link.target!=='_self') return;
+  const url=new URL(link.href,location.href);
+  if(url.origin!==location.origin || url.hash) return;
+  getPageHtml(url).catch(()=>{});
+},{passive:true});
 
 window.addEventListener('popstate',()=>{
   navigateWithoutReload(new URL(location.href),false);
