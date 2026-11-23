@@ -184,7 +184,6 @@ h1 em,h2 em{color:#b9aaff}
 .contact-section{background:linear-gradient(135deg,#171b37,#282049);border-color:#33405c}
 .travel-entry{background:#1b2735;border-radius:8px}
 .trip-content>section:first-child{background:#1b2735}
-.home-bottom h2{white-space:nowrap}
 .page-leaving{opacity:.5;transform:translateY(4px);transition:opacity .18s,transform .18s}
 ::view-transition-old(root){animation:page-out .28s ease-out both}
 ::view-transition-new(root){animation:page-in .34s ease-out both}
