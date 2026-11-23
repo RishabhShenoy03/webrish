@@ -72,9 +72,10 @@ nav a{color:#c3c8c9}nav a[aria-current]{color:#f3eee3}nav a:hover{color:#f3eee3}
 .work-card{--tab:#869bb2;background:#1b2735;border-color:rgba(219,220,207,.2);transition:transform .2s,border-color .2s}
 .work-card:hover{transform:translateY(-3px);border-color:var(--tab)}
 .work-card:nth-child(2){--tab:#a792b4}.work-card:nth-child(3){--tab:#83a5a4}.work-card:nth-child(4){--tab:#b4a188}.work-card:nth-child(5){--tab:#8ca7bc}.work-card:nth-child(6){--tab:#aa96a0}.work-card:nth-child(7){--tab:#9eaa95}
-.work-image{margin-top:36px;height:250px;overflow:visible}
+/* Constrain the grid track so intrinsic photo sizes cannot cover the project copy. */
+.work-image{margin-top:36px;height:250px;grid-template-rows:minmax(0,1fr);overflow:visible}
 .work-image:before{content:"●  ●  ●     /  project";position:absolute;bottom:100%;left:0;right:0;height:36px;display:flex;align-items:center;padding:0 17px;background:color-mix(in srgb,var(--tab) 30%,#1b2735);border-bottom:1px solid rgba(219,220,207,.16);font:500 .65rem 'DM Mono',monospace;letter-spacing:.04em;color:#f0efe9}
-.work-image>img,.work-image>.camera-ui,.work-image>.pet-ui,.work-image>.pixel-pet{max-height:100%}
+.work-image>img,.work-image>.camera-ui,.work-image>.pet-ui,.work-image>.pixel-pet{min-height:0;max-height:100%}
 .travel-preview{height:auto;border:1px solid rgba(219,220,207,.24);border-radius:9px;background:#1b2735;overflow:hidden;padding-top:34px}
 .travel-preview:before{content:"●  ●  ●     /  field notes";position:absolute;top:0;left:0;right:0;height:34px;display:flex;align-items:center;padding:0 14px;background:#344455;font:500 .65rem 'DM Mono',monospace;color:#e9e8e1}
 .travel-preview img{height:270px}
