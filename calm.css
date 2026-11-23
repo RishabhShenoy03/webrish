@@ -21,7 +21,7 @@ nav{height:84px;display:flex;align-items:center;gap:30px}
 nav a,.header-contact,.text-link,.socials,footer{font-family:var(--sans);font-size:.85rem;letter-spacing:0}
 nav a{position:relative;color:var(--muted);display:inline-flex;align-items:center;height:84px;line-height:84px;padding:0}
 nav a[aria-current]{color:var(--text)}
-nav a:after{content:'';position:absolute;height:1.5px;width:100%;border-radius:999px;background:var(--accent);bottom:24px;left:0;transform:scaleX(0);transform-origin:left center;transition:transform .22s cubic-bezier(.2,.65,.3,1)}
+nav a:after{content:'';position:absolute;height:1.5px;width:100%;border-radius:999px;background:var(--accent);bottom:28px;left:0;transform:scaleX(0);transform-origin:left center;transition:transform .22s cubic-bezier(.2,.65,.3,1)}
 nav a:hover:after,nav a:focus-visible:after,nav a[aria-current]:after{transform:scaleX(1)}
 .header-contact{border:1px solid #66705f;border-radius:999px;padding:12px 20px;transition:background .2s}
 .header-contact:hover{background:var(--forest);color:var(--text)}
@@ -146,8 +146,10 @@ a:focus-visible{outline:2px solid #d6cfff;outline-offset:5px}
 .header-contact{border:1px solid #828ca9;border-radius:6px}
 .header-socials,.hero-socials{display:flex;align-items:center;gap:16px;font:500 .85rem var(--sans);line-height:1}
 .header-socials{height:84px;margin-left:auto;padding-right:12px}
-.header-socials a{height:84px;display:inline-flex;align-items:center;line-height:84px;padding:0;border:0;transform:translateY(1px)}
+.header-socials a{position:relative;height:84px;display:inline-flex;align-items:center;line-height:84px;padding:0;border:0}
 .header-socials a{color:#d8def0;border:0;padding:0}
+.header-socials a:after{content:'';position:absolute;height:1.5px;width:100%;border-radius:999px;background:var(--accent);bottom:28px;left:0;transform:scaleX(0);transform-origin:left center;transition:transform .22s cubic-bezier(.2,.65,.3,1)}
+.header-socials a:hover:after,.header-socials a:focus-visible:after{transform:scaleX(1)}
 .hero-socials a{color:#d8def0;border-bottom:1px solid #8792af;padding-bottom:5px}
 .kicker{color:var(--accent)}
 .hero-heading h1,.projects-intro h1,.section-title h2,.home-bottom h2,.contact-section h2,.trip-intro h1{font-family:var(--serif);letter-spacing:-.055em}
