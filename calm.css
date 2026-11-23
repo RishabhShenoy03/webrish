@@ -136,7 +136,7 @@ body{background:radial-gradient(circle at 79% 9%,#29204d 0,transparent 28%),radi
 a:hover{color:#d0c7ff}
 a:focus-visible{outline:2px solid #d6cfff;outline-offset:5px}
 .skip{background:#d6cfff;color:#080d1c}
-.site-header{background:rgba(9,13,32,.94);border-bottom:1px solid var(--line)}
+.site-header{background:var(--bg);border-bottom:1px solid var(--line);backdrop-filter:none}
 .logo .logo-text,.logo-text>span{color:var(--text)}
 .logo-text>span{color:var(--accent)}
 .header-contact{border:1px solid #828ca9;border-radius:6px}
@@ -148,21 +148,30 @@ a:focus-visible{outline:2px solid #d6cfff;outline-offset:5px}
 h1 em,h2 em{color:#b9aaff}
 .location-note,.intro-copy,.hero-note,.home-project p,.work-content p,.travel-entry p,.trip-content p,.trip-content li,footer{color:#bcc6dd}
 .status-dot{background:#9f93cf;box-shadow:0 0 0 4px #9f93cf1a}
-.primary-link{background:#b9aaff;color:#101627;border-radius:7px}
+.primary-link{background:#b9aaff;color:#101627;border-radius:999px}
 .primary-link:hover{background:#d3caff;color:#101627}
 .text-link{border-bottom:1px solid #9389bf}
 .hero-actions{align-items:center;flex-wrap:wrap}
 .hero-portrait,.travel-preview,.work-card,.contact-section,.travel-entry,.trip-content>section:first-child{border:1px solid #33405c;box-shadow:0 16px 50px rgba(3,7,24,.18)}
+.hero-portrait{border-radius:13px;overflow:hidden}
 .hero-portrait:before{content:"●  ●  ●     /  rishabh  /  profile.jpg";display:flex;align-items:center;height:36px;padding:0 16px;background:#29384d;border-bottom:1px solid #637085;font:500 .68rem 'DM Mono',monospace;color:#e7e9f7}
 .hero-portrait img{border-radius:0;background:#141f3c}
 .hero-portrait figcaption{background:#111a30;border-top:1px solid #29334e}
-.home-projects{gap:16px}
-.home-project{--tab:#869bb2;position:relative;display:grid;grid-template-columns:30px 1fr 22px;gap:14px;align-items:center;min-height:155px;padding:52px 20px 20px;background:#1b2735;border:1px solid rgba(219,220,207,.2);border-radius:10px;overflow:hidden}
+.home-projects{gap:28px 16px}
+.home-project{--tab:#869bb2;position:relative;display:block;min-height:0;padding:36px 0 0;background:#1b2735;border:1px solid rgba(219,220,207,.2);border-radius:10px;overflow:hidden}
 .home-project:last-child{border:1px solid rgba(219,220,207,.2)}
 .home-project:before{content:"●  ●  ●     /  project";position:absolute;inset:0 0 auto;display:block;padding:11px 16px;background:color-mix(in srgb,var(--tab) 24%,#1b2735);border-bottom:1px solid rgba(219,220,207,.16);font:500 .65rem 'DM Mono',monospace;letter-spacing:.04em;color:#e4e6e2}
 .home-project:nth-child(2){--tab:#aa95b2}.home-project:nth-child(3){--tab:#7b9f9d}.home-project:nth-child(4){--tab:#b19b81}
-.home-project:hover{padding-left:20px;transform:translateY(-3px);background:#213044;border-color:var(--tab)}
-.home-project .arrow{width:30px;height:30px;border:0;border-radius:0}
+.home-project:hover{transform:translateY(-3px);background:#213044;border-color:var(--tab)}
+.home-project-image{height:300px;margin:0;border-radius:0}
+.home-project-image img{object-fit:cover}
+.project-opensuite img{object-fit:contain;padding:28px;background:#eceaf1}
+.home-project-info{height:150px;padding:22px 24px}
+.home-project-info>div{min-width:0}
+.home-project h3{margin:8px 0 6px}
+.home-project p{margin:0 0 9px}
+.home-stack{display:block;color:#aeb9d3;font:500 .62rem/1.5 'DM Mono',monospace;letter-spacing:.025em}
+.home-project .arrow{width:42px;height:42px;border:1px solid #66705f;border-radius:50%}
 .work-card{--tab:#869bb2;background:#1b2735;border-color:rgba(219,220,207,.2);border-radius:8px}
 .work-card:nth-child(2){--tab:#a792b4}.work-card:nth-child(3){--tab:#83a5a4}.work-card:nth-child(4){--tab:#b4a188}.work-card:nth-child(5){--tab:#8ca7bc}.work-card:nth-child(6){--tab:#aa96a0}.work-card:nth-child(7){--tab:#9eaa95}
 .work-image{position:relative;margin-top:36px;height:250px;overflow:visible}
@@ -175,10 +184,12 @@ h1 em,h2 em{color:#b9aaff}
 .contact-section{background:linear-gradient(135deg,#171b37,#282049);border-color:#33405c}
 .travel-entry{background:#1b2735;border-radius:8px}
 .trip-content>section:first-child{background:#1b2735}
+.home-bottom h2{white-space:nowrap}
 .page-leaving{opacity:.5;transform:translateY(4px);transition:opacity .18s,transform .18s}
 ::view-transition-old(root){animation:page-out .28s ease-out both}
 ::view-transition-new(root){animation:page-in .34s ease-out both}
 @keyframes page-out{to{opacity:.2;transform:translateY(8px)}}
 @keyframes page-in{from{opacity:.25;transform:translateY(10px)}}
 @media(max-width:800px){.home-projects{grid-template-columns:1fr}.header-socials{gap:10px}}
-@media(max-width:650px){.header-socials{display:none}.hero-socials{width:100%;order:2}.hero-actions{gap:18px}.hero-portrait:before{font-size:.62rem;padding:0 14px}.travel-preview img{height:230px}.work-image{height:220px}}
+@media(max-width:800px){.home-bottom h2{white-space:normal}}
+@media(max-width:650px){.header-socials{display:none}.hero-socials{width:100%;order:2}.hero-actions{gap:18px}.hero-portrait:before{font-size:.62rem;padding:0 14px}.travel-preview img{height:230px}.work-image{height:220px}.home-project-image{height:220px}.home-project-info{height:145px;padding:20px}.home-stack{font-size:.58rem}}
