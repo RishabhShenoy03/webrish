@@ -133,6 +133,7 @@ footer div{gap:26px}
 /* Blue retro-browser system. */
 :root{color-scheme:dark;--bg:#090d20;--surface:#111a30;--line:#29334e;--text:#f0f2ff;--muted:#abb6d0;--accent:#b5a6ff;--serif:Georgia,'Times New Roman',serif;--sans:'DM Sans',sans-serif}
 body{background:linear-gradient(115deg,#080d20 0%,#0d1834 52%,#191b3a 78%,#29204d 100%);color:var(--text)}
+.shell{width:min(1120px,calc(100% - 96px))}
 a:hover{color:#d0c7ff}
 a:focus-visible{outline:2px solid #d6cfff;outline-offset:5px}
 .skip{background:#d6cfff;color:#080d1c}
@@ -141,7 +142,7 @@ a:focus-visible{outline:2px solid #d6cfff;outline-offset:5px}
 .logo-text>span{color:var(--accent)}
 .header-contact{border:1px solid #828ca9;border-radius:6px}
 .header-socials,.hero-socials{display:flex;align-items:center;gap:16px;font:500 .72rem 'DM Mono',monospace}
-.header-socials{margin-left:auto}
+.header-socials{margin-left:auto;padding-right:12px}
 .header-socials a,.hero-socials a{color:#d8def0;border-bottom:1px solid #8792af;padding-bottom:5px}
 .kicker{color:var(--accent)}
 .hero-heading h1,.projects-intro h1,.section-title h2,.home-bottom h2,.contact-section h2,.trip-intro h1{font-family:var(--serif);letter-spacing:-.055em}
@@ -151,7 +152,10 @@ h1 em,h2 em{color:#b9aaff}
 .primary-link{background:#b9aaff;color:#101627;border-radius:999px}
 .primary-link:hover{background:#d3caff;color:#101627}
 .text-link{border-bottom:1px solid #9389bf}
-.hero-actions{align-items:center;flex-wrap:wrap}
+.hero-actions{align-items:center;flex-wrap:wrap;gap:18px 22px}
+.hero-socials{margin-right:2px;gap:18px}
+.hero-socials a{padding:5px 2px}
+.primary-link{min-height:52px;padding:16px 24px}
 .hero-portrait,.travel-preview,.work-card,.contact-section,.travel-entry,.trip-content>section:first-child{border:1px solid #33405c;box-shadow:0 16px 50px rgba(3,7,24,.18)}
 .hero-portrait{border-radius:13px;overflow:hidden}
 .hero-portrait:before{content:"●  ●  ●     /  rishabh  /  profile.jpg";display:flex;align-items:center;height:36px;padding:0 16px;background:#29384d;border-bottom:1px solid #637085;font:500 .68rem 'DM Mono',monospace;color:#e7e9f7}
@@ -163,10 +167,10 @@ h1 em,h2 em{color:#b9aaff}
 .home-project:before{content:"●  ●  ●     /  project";position:absolute;inset:0 0 auto;display:block;padding:11px 16px;background:color-mix(in srgb,var(--tab) 24%,#1b2735);border-bottom:1px solid rgba(219,220,207,.16);font:500 .65rem 'DM Mono',monospace;letter-spacing:.04em;color:#e4e6e2}
 .home-project:nth-child(2){--tab:#aa95b2}.home-project:nth-child(3){--tab:#7b9f9d}.home-project:nth-child(4){--tab:#b19b81}
 .home-project:hover{transform:translateY(-3px);background:#213044;border-color:var(--tab)}
-.home-project-image{width:100%;height:auto;aspect-ratio:16/9;margin:0;border-radius:0}
+.home-project-image{width:calc(100% - 48px);height:auto;aspect-ratio:16/9;margin:0 24px;border-radius:8px}
 .home-project-image img{width:100%;height:100%;object-fit:cover;object-position:center}
 .project-opensuite img{object-fit:cover;object-position:center;padding:0;background:#eceaf1}
-.home-project-info{height:150px;padding:22px 24px}
+.home-project-info{display:flex;height:150px;padding:22px 24px}
 .home-project-info>div{min-width:0}
 .home-project h3{margin:8px 0 6px}
 .home-project p{margin:0 0 9px}
@@ -189,6 +193,6 @@ h1 em,h2 em{color:#b9aaff}
 ::view-transition-new(root){animation:page-in .34s ease-out both}
 @keyframes page-out{to{opacity:.2;transform:translateY(8px)}}
 @keyframes page-in{from{opacity:.25;transform:translateY(10px)}}
-@media(max-width:800px){.home-projects{grid-template-columns:1fr}.header-socials{gap:10px}}
+@media(max-width:800px){.shell{width:calc(100% - 64px)}.home-projects{grid-template-columns:1fr}.header-socials{gap:10px}}
 @media(max-width:800px){.home-bottom h2{white-space:normal}}
-@media(max-width:650px){.header-socials{display:none}.hero-socials{width:100%;order:2}.hero-actions{gap:18px}.hero-portrait:before{font-size:.62rem;padding:0 14px}.travel-preview img{height:230px}.work-image{height:220px}.home-project-image{height:220px}.home-project-info{height:145px;padding:20px}.home-stack{font-size:.58rem}}
+@media(max-width:650px){.shell{width:calc(100% - 36px)}.header-socials{display:none}.hero-socials{width:100%;order:2}.hero-actions{gap:18px}.hero-portrait:before{font-size:.62rem;padding:0 14px}.travel-preview img{height:230px}.work-image{height:220px}.home-project-image{height:auto;aspect-ratio:1.55;width:calc(100% - 40px);margin:0 20px}.home-project-info{height:145px;padding:20px}.home-stack{font-size:.58rem}}
