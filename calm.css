@@ -282,3 +282,10 @@ html{scroll-padding-top:100px}
 .home-work,.career-section,.home-bottom,.projects-intro,.work-meta,footer{border-top:0;border-bottom:0}
 .education-entry{border-bottom:0}
 .education-grid{border-top:0}
+
+/* Sidebar rail line: grow it with width rather than transform. A scaled
+   1.5px line is rasterised at its full size and re-rasterised when the
+   transition settles, which reads as the line shrinking right at the end.
+   Animating width keeps the settled line at exactly the item width. */
+.checkpoints a:after{width:0;transform:none;transition:width .22s cubic-bezier(.2,.65,.3,1)}
+.checkpoints a:hover:after,.checkpoints a:focus-visible:after{width:100%;transform:none}
