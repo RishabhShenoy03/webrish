@@ -287,5 +287,17 @@ html{scroll-padding-top:100px}
    1.5px line is rasterised at its full size and re-rasterised when the
    transition settles, which reads as the line shrinking right at the end.
    Animating width keeps the settled line at exactly the item width. */
-.checkpoints a:after{width:0;transform:none;transition:width .22s cubic-bezier(.2,.65,.3,1)}
-.checkpoints a:hover:after,.checkpoints a:focus-visible:after{width:100%;transform:none}
+
+/* Rail line: painted as a background rule instead of a pseudo-element, so it
+   keeps a constant 2px thickness, starts flush with the item's left edge and
+   grows in width - no scaled layer, so nothing re-rasterises at the end. */
+@media(min-width:1200px){
+  .checkpoints a:after{display:none}
+  .checkpoints a{background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;
+    background-position:0 3px;background-size:0 2px;
+    transition:background-color .45s cubic-bezier(.2,.65,.3,1),background-size .45s cubic-bezier(.2,.65,.3,1)}
+  .checkpoints a:hover,.checkpoints a:focus-visible{
+    background-color:#263451;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;background-position:0 3px;background-size:100% 2px}
+}
