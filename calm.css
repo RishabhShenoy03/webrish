@@ -274,3 +274,5 @@ html{scroll-padding-top:100px}
 @media(max-width:800px){.hero-heading h1{font-size:clamp(2rem,6.5vw,5.2rem)}.home-page #selected-work,.home-page #experience,.home-page #education,.home-page #field-notes{scroll-margin-top:-35px}}
 @media(max-width:650px){.hero-heading h1{font-size:clamp(2rem,8.2vw,3.3rem)}.home-work{margin-top:48px;padding:48px 0}.career-section,.home-bottom{padding:48px 0}.home-page #selected-work,.home-page #experience,.home-page #education,.home-page #field-notes{scroll-margin-top:-20px}}
 .hero-heading h1>span:last-child{color:var(--accent)}
+/* Keep the divider between schools and the section divider, without a second line after VJC. */
+.education-entry:last-child{border-bottom:0}
