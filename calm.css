@@ -261,3 +261,7 @@ html{scroll-padding-top:100px}
 /* Match the project section's opening rhythm to Experience. */
 .home-work{border-top:1px solid var(--line);padding-top:72px}
 @media(max-width:650px){.home-work{padding-top:48px}}
+/* Separate the portrait from the project divider; education entries need no line under the heading. */
+.home-work{margin-top:36px;padding-top:36px;border-top:1px solid #52607e}
+.education-grid{border-top:0}
+@media(max-width:650px){.home-work{margin-top:24px;padding-top:24px}}
