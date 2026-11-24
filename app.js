@@ -20,8 +20,7 @@ function initPage(){
   const header=document.querySelector('.site-header');
   if(header){
     const updateHeader=()=>{
-      const portraitBottom=portrait?.getBoundingClientRect().bottom ?? 0;
-      header.classList.toggle('scrolled',window.scrollY>24 && (!portrait || portraitBottom<84));
+      header.classList.toggle('scrolled',window.scrollY>4);
     };
     window.removeEventListener('scroll',window.__rishabhHeaderScroll);
     window.__rishabhHeaderScroll=updateHeader;

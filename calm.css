@@ -242,3 +242,7 @@ body{animation-fill-mode:none}.checkpoints{margin:0}.checkpoints a[aria-current]
 /* Keep the page centered; checkpoints sit in the outer margin when it is wide enough. */
 @media(min-width:1200px){.shell{width:min(1120px,calc(100% - 96px));margin-inline:auto}}
 @media(min-width:1200px) and (max-width:1499px){.checkpoints{top:auto;bottom:0;left:0;right:0;width:auto;height:auto;transform:none;display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap;gap:1px;padding:5px 8px;background:var(--bg);border-top:1px solid var(--line)}.checkpoints a{width:auto;min-height:30px;padding:4px 8px}.checkpoint-label{font-size:.68rem}body{padding-bottom:65px}}
+/* The frosted header extends across the viewport while its contents stay aligned. */
+.site-header,.site-header.scrolled{isolation:isolate;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.site-header::before{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:rgba(8,13,32,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(195,204,255,.12);pointer-events:none}
+.site-header.scrolled::before{background:rgba(8,13,32,.93);border-bottom-color:rgba(195,204,255,.18)}
