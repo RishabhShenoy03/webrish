@@ -251,3 +251,10 @@ body{animation-fill-mode:none}.checkpoints{margin:0}.checkpoints a[aria-current]
 
 /* Small optical adjustment to align the wordmark with the navigation. */
 .site-header .logo-text{position:relative;top:2px}
+/* Anchor the visible section heading just below the sticky header. */
+html{scroll-padding-top:100px}
+[data-checkpoint]{scroll-margin-top:0}
+.home-page #selected-work,.home-page #experience,.home-page #education,.home-page #field-notes{scroll-margin-top:-60px}
+.home-page #contact{scroll-margin-top:0}
+@media(max-width:800px){.home-page #selected-work,.home-page #experience,.home-page #education,.home-page #field-notes{scroll-margin-top:-40px}}
+.home-bottom{align-items:start}
