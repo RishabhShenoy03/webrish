@@ -277,3 +277,8 @@ html{scroll-padding-top:100px}
 .hero-heading h1>span:last-child{color:var(--accent)}
 /* Keep the divider between schools and the section divider, without a second line after VJC. */
 .education-entry:last-child{border-bottom:0;padding-bottom:0}
+
+/* Dividers removed: hairlines go, all padding and vertical rhythm stay. */
+.home-work,.career-section,.home-bottom,.projects-intro,.work-meta,footer{border-top:0;border-bottom:0}
+.education-entry{border-bottom:0}
+.education-grid{border-top:0}

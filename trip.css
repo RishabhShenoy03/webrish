@@ -16,3 +16,8 @@
 .trip-page #main,.trip-content [id]{scroll-margin-top:100px}
 @media(max-width:700px){.trip-intro{padding:36px 0}.trip-content{padding-top:32px}.trip-content>section:first-child{padding:22px}.trip-content img{width:calc(50% - 20px)!important;height:auto}}
 @media(max-width:380px){.trip-page .site-header{gap:12px}.trip-page .header-avatar{display:none}}
+
+/* Dividers removed: no rules between journal sections, spacing unchanged. */
+.trip-intro{border-bottom:0}
+.trip-content section:not(:first-child){border-bottom:0}
+.trip-content hr{display:none}
