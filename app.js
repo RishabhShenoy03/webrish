@@ -32,21 +32,21 @@ function initPage(){
 
 initPage();
 
-async function navigateWithFade(url){
-  if(location.protocol==='file:' || url.origin!==location.origin) return;
-  document.documentElement.classList.add('navigation-starting');
-  document.body.classList.add('page-leaving');
-  await new Promise(resolve=>setTimeout(resolve,prefersReducedMotion?0:140));
-  location.href=url.href;
+// Native anchor links remain usable without intercepting browser navigation.
+const checkpoints=[];
+function checkpoint(element,label){if(!element)return;if(!element.id)element.id='checkpoint-'+checkpoints.length;element.dataset.checkpoint='';checkpoints.push({element,label});}
+if(document.body.classList.contains('home-page')){
+ for(const [id,label] of [['introduction','Hello'],['selected-work','Work'],['experience','Experience'],['education','Education'],['field-notes','Travels'],['contact','Contact']])checkpoint(document.getElementById(id),label);
+}else if(document.querySelector('.project-gallery')){
+ checkpoint(document.querySelector('.projects-intro'),'Overview');document.querySelectorAll('.work-card').forEach(e=>checkpoint(e,e.querySelector('h2').textContent));
+}else if(document.querySelector('.travel-index')){
+ checkpoint(document.querySelector('.projects-intro'),'Overview');document.querySelectorAll('.travel-entry').forEach(e=>checkpoint(e,e.querySelector('h2').textContent));
+}else{
+ checkpoint(document.querySelector('.trip-intro'),'Overview');document.querySelectorAll('.trip-content section[id]').forEach(e=>checkpoint(e,e.id.replace('Background of Korea Trip','Background').replace('Background of Chiang Mai Trip','Background')));
 }
-
-document.addEventListener('click',event=>{
-  const link=event.target.closest('a[href]');
-  if(!link || event.defaultPrevented || event.button!==0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-  if(link.target && link.target!=='_self') return;
-  const url=new URL(link.href,location.href);
-  if(url.origin!==location.origin || url.pathname===location.pathname && url.hash && link.getAttribute('href')?.startsWith('#')) return;
-  if(url.protocol==='mailto:' || url.protocol==='tel:' || url.pathname===location.pathname && url.hash) return;
-  event.preventDefault();
-  navigateWithFade(url);
-});
+if(checkpoints.length){
+ const nav=document.createElement('nav');nav.className='checkpoints';nav.setAttribute('aria-label','Page checkpoints');
+ checkpoints.forEach(({element,label})=>{const a=document.createElement('a');a.href='#'+encodeURIComponent(element.id);a.innerHTML='<span class="checkpoint-dot" aria-hidden="true"></span>';const text=document.createElement('span');text.className='checkpoint-label';text.textContent=label;a.append(text);nav.append(a)});document.body.append(nav);
+ let queued=false;function update(){let active=0;checkpoints.forEach(({element},i)=>{if(element.getBoundingClientRect().top<=Math.min(220,innerHeight*.35))active=i});[...nav.children].forEach((a,i)=>{if(i===active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});queued=false}
+ addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update)}},{passive:true});addEventListener('resize',update);update();
+}
