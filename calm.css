@@ -248,3 +248,6 @@ body{animation-fill-mode:none}.checkpoints{margin:0}.checkpoints a[aria-current]
 .site-header.scrolled::before{background:rgba(8,13,32,.93);border-bottom-color:rgba(195,204,255,.18)}
 /* Fixed viewport edges avoid 100vw including the browser's vertical scrollbar. */
 .site-header::before{position:fixed;top:0;left:0;right:0;bottom:auto;width:auto;height:inherit;transform:none;box-sizing:border-box}
+
+/* Small optical adjustment to align the wordmark with the navigation. */
+.site-header .logo-text{position:relative;top:2px}
