@@ -47,6 +47,6 @@ if(document.body.classList.contains('home-page')){
 if(checkpoints.length){
  const nav=document.createElement('nav');nav.className='checkpoints';nav.setAttribute('aria-label','Page checkpoints');
  checkpoints.forEach(({element,label})=>{const a=document.createElement('a');a.href='#'+encodeURIComponent(element.id);a.innerHTML='<span class="checkpoint-dot" aria-hidden="true"></span>';const text=document.createElement('span');text.className='checkpoint-label';text.textContent=label;a.append(text);nav.append(a)});document.body.append(nav);
- let queued=false;function update(){let active=0;checkpoints.forEach(({element},i)=>{if(element.getBoundingClientRect().top<=Math.min(260,innerHeight*.4))active=i});[...nav.children].forEach((a,i)=>{if(i===active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});queued=false}
+ let queued=false;function update(){let active=0;checkpoints.forEach(({element},i)=>{if(element.getBoundingClientRect().top<=Math.min(260,innerHeight*.4))active=i});if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-2)active=checkpoints.length-1;[...nav.children].forEach((a,i)=>{if(i===active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});queued=false}
  addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update)}},{passive:true});addEventListener('resize',update);update();
 }
