@@ -239,3 +239,6 @@ body{animation-fill-mode:none}.checkpoints{margin:0}.checkpoints a[aria-current]
 .contact-email{margin-top:10px!important}.contact-email a{text-decoration:underline;text-underline-offset:4px}
 @media(min-width:1200px){.checkpoints{background:transparent;border:0;box-shadow:none}}
 @media(max-width:1199px){.checkpoints{background:var(--bg);border:0;border-top:1px solid var(--line)}}
+/* Keep the page centered; checkpoints sit in the outer margin when it is wide enough. */
+@media(min-width:1200px){.shell{width:min(1120px,calc(100% - 96px));margin-inline:auto}}
+@media(min-width:1200px) and (max-width:1499px){.checkpoints{top:auto;bottom:0;left:0;right:0;width:auto;height:auto;transform:none;display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap;gap:1px;padding:5px 8px;background:var(--bg);border-top:1px solid var(--line)}.checkpoints a{width:auto;min-height:30px;padding:4px 8px}.checkpoint-label{font-size:.68rem}body{padding-bottom:65px}}
