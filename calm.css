@@ -294,10 +294,11 @@ html{scroll-padding-top:100px}
 @media(min-width:1200px){
   .checkpoints a:after{display:none}
   .checkpoints a{background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;
-    background-position:0 3px;background-size:0 2px;
+    background-origin:border-box;background-position:0 3px;background-size:0 2px;
     transition:background-color .45s cubic-bezier(.2,.65,.3,1),background-size .45s cubic-bezier(.2,.65,.3,1)}
   .checkpoints a:hover,.checkpoints a:focus-visible{
     background-color:#263451;
     background-image:linear-gradient(var(--accent),var(--accent));
-    background-repeat:no-repeat;background-position:0 3px;background-size:100% 2px}
+    background-repeat:no-repeat;background-origin:border-box;
+    background-position:0 3px;background-size:100% 2px}
 }
